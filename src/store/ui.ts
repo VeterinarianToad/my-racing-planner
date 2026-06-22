@@ -31,9 +31,11 @@ export const useUiStorePersist = create(
       seasonShowOwned: true,
       seasonShowParticipation: false,
       seasonShowThisWeek: true,
+      seasonShowWeekOff: false,
       seasonUseLocalTimezone: true,
       seasonCategory: ECarCategories.all,
       seasonAxisInverted: false,
+      seasonHidePastWeeks: false,
       shopVolumeDiscount: true,
       shopLoyaltyDiscount: false,
       helpPresented: false,
@@ -69,11 +71,17 @@ export const setSeasonShowParticipation = (value: boolean) =>
 export const setSeasonShowThisWeek = (value: boolean) =>
   useUiStorePersist.setState(() => ({ seasonShowThisWeek: value }));
 
+export const setSeasonShowWeekOff = (value: boolean) =>
+  useUiStorePersist.setState(() => ({ seasonShowWeekOff: value }));
+
 export const setSeasonUseLocalTimezone = (value: boolean) =>
   useUiStorePersist.setState(() => ({ seasonUseLocalTimezone: value }));
 
 export const setSeasonAxisInverted = (value: boolean) =>
   useUiStorePersist.setState(() => ({ seasonAxisInverted: value }));
+
+export const setSeasonHidePastWeeks = (value: boolean) =>
+  useUiStorePersist.setState(() => ({ seasonHidePastWeeks: value }));
 
 export const setSeasonCategory = (value: ECarCategories) =>
   useUiStorePersist.setState(() => ({ seasonCategory: value }));
@@ -111,11 +119,17 @@ export const useUi = () => {
   const seasonShowThisWeek = useUiStorePersist(
     (state) => state.seasonShowThisWeek,
   );
+  const seasonShowWeekOff = useUiStorePersist(
+    (state) => state.seasonShowWeekOff,
+  );
   const seasonUseLocalTimezone = useUiStorePersist(
     (state) => state.seasonUseLocalTimezone,
   );
   const seasonAxisInverted = useUiStorePersist(
     (state) => state.seasonAxisInverted,
+  );
+  const seasonHidePastWeeks = useUiStorePersist(
+    (state) => state.seasonHidePastWeeks,
   );
   const seasonCategory = useUiStorePersist((state) => state.seasonCategory);
   const shopVolumeDiscount = useUiStorePersist(
@@ -137,9 +151,11 @@ export const useUi = () => {
     seasonShowOwned,
     seasonShowParticipation,
     seasonShowThisWeek,
+    seasonShowWeekOff,
     seasonShowRain: true,
     seasonUseLocalTimezone,
     seasonAxisInverted,
+    seasonHidePastWeeks,
     seasonCategory,
     shopVolumeDiscount,
     shopLoyaltyDiscount,

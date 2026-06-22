@@ -2,6 +2,13 @@
 
 All notable changes to the **"Racing Planner"** project will be documented in this file.
 
+## 0.11.0
+
+- Added "Hide past weeks" toggle to My Season and My Schedule
+- Added week-off checkboxes to let you exclude specific weeks from the Shop Guide
+- Added car names on Ring Meister series Season page cells
+- Added option to unfavorite series directly from Season page
+
 ## 0.10.3
 
 - Updated removing week 13 series
